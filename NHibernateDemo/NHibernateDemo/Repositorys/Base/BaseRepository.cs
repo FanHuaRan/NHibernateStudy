@@ -43,7 +43,7 @@ namespace NHibernateDemo.Repositorys
         {
             using (var session = GetSession())
             {
-                return session.Query<T>().AsEnumerable<T>();
+                return session.Query<T>().AsEnumerable<T>().ToList();
             }
         }
 
@@ -101,7 +101,7 @@ namespace NHibernateDemo.Repositorys
               {
                   query.SetParameter(i, paramArry[i]);
               }
-              return query.Enumerable<T>();
+              return query.Enumerable<T>().ToList();
             }
         }
 
@@ -111,7 +111,7 @@ namespace NHibernateDemo.Repositorys
             {
                 var query = session.CreateQuery(string.Format("from {0} as model where model.{1} =?", entityName, propertyName));
                 query.SetParameter(0, value);
-                return query.Enumerable<T>();
+                return query.Enumerable<T>().ToList();
             }
         }
         public int DeleteByHQL(string hql)
