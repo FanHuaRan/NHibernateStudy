@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- assembly是实体类所在的程序集(非命名空间) namespace是实体类命名空间(非必需，这样class就必须是命名空间+类名)-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="NHibernateDemo" namespace="NHibernateDemo.Models">
+  <class name="Genre" table="Genre">
+    <!--主键属性-->
+    <id name="GenreId" type="int">
+      <column name="GenreId" />
+      <generator class="identity" />
+    </id>
+    <!--普通字段属性-->
+    <property name="Name" type="string">
+      <column name="Name"/>
+    </property>
+    <property name="Description" type="string">
+      <column name="Description"/>
+    </property>
+  </class>
+</hibernate-mapping>
