@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NHibernateDemo.Respositorys.Impl
+namespace NHibernateDemo.Repositorys.Impl
 {
     public class AlbumRepository : BaseRepository<Album>, IAlbumRepository
     {
-        public static const String TITLE = "title";
-        public static const String PRICE = "price";
-        public static const String ALBUM_ART_URL = "albumArtUrl";
+        public static readonly String TITLE = "title";
+        public static readonly String PRICE = "price";
+        public static readonly String ALBUM_ART_URL = "albumArtUrl";
 
         public IEnumerable<Album> FindByTitle(string value)
         {

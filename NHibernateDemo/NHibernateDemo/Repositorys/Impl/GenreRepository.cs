@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NHibernateDemo.Respositorys.Impl
+namespace NHibernateDemo.Repositorys.Impl
 {
    public class GenreRepository : BaseRepository<Genre>, IGenreRepository
     {
-        public static const String NAME = "name";
-        public static const String DESCRIPTION = "description";
+       public static readonly String NAME = "name";
+        public static readonly String DESCRIPTION = "description";
 
         public IEnumerable<Genre> FindByName(string name)
         {

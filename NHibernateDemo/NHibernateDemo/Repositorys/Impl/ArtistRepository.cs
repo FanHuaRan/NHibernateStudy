@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NHibernateDemo.Respositorys.Impl
+namespace NHibernateDemo.Repositorys.Impl
 {
     public class ArtistRepository : BaseRepository<Artist>, IArtistRepository
     {
-        	public static const String NAME = "name";
+        public static readonly String NAME = "name";
 
 
             public IEnumerable<Artist> FindByName(string name)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NHibernateDemo.Respositorys
+namespace NHibernateDemo.Repositorys
 {
     /// <summary>
     /// 仓库泛型接口

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NHibernateDemo.Respositorys
+namespace NHibernateDemo.Repositorys
 {
     public class BaseRepository<T>:IBaseHibernateDAO<T>,IRepository<T> where T:class
     {

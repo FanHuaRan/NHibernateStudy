@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NHibernateDemo.Respositorys
+namespace NHibernateDemo.Repositorys
 {
     public interface IGenreRepository : IRepository<Genre>
     {
