@@ -69,6 +69,7 @@
     <Compile Include="Repositorys\Impl\GenreRepository.cs" />
     <Compile Include="Services\IAlbumService.cs" />
     <Compile Include="Services\Impl\AlbumService.cs" />
+    <Compile Include="Utils\NHibernateUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

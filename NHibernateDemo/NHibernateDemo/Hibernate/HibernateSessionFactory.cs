@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace NHibernateDemo.Hibernate
 {
     /// <summary>
-    /// HibernateSession 工厂封装
+    /// HibernateSession 工厂封装 实现线程安全
     /// 2017/05/13 fhr
     /// </summary>
     public class HibernateSessionFactory
@@ -21,7 +21,7 @@ namespace NHibernateDemo.Hibernate
         /// </summary>
         private static readonly ILog logger = LogManager.GetLogger(typeof(HibernateSessionFactory));
         /// <summary>
-        /// Hibernate配置文件路径
+        /// Hibernate配置文件路径 默认为项目输出目录下的hibernate.cfg.xml 如果不是则在此写相对路径
         /// </summary>
         private static string _configFile =null;
         /// <summary>
@@ -57,8 +57,8 @@ namespace NHibernateDemo.Hibernate
         public static ISession GetSession()
         {
             var session = _threadLocalSession.Value;
-            //若无则创建
-            if (session == null)
+            //若无或者已关闭则创建
+            if (session == null || !session.IsOpen)
             {
                 if (_sessionFactory == null)
                 {
@@ -66,11 +66,6 @@ namespace NHibernateDemo.Hibernate
                 }
                 session = (_sessionFactory != null) ? _sessionFactory.OpenSession() : null;
                 _threadLocalSession.Value = session;
-            }
-            //若有则重新连接
-            if (session != null && !session.IsOpen)
-            {
-                session.Reconnect();
             }
             return session;
         }

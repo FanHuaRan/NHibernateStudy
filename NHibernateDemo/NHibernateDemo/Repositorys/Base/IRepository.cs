@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace NHibernateDemo.Repositorys
 {
     /// <summary>
-    /// 仓库泛型接口
+    /// 仓库泛型接口 这儿的接口最好屏蔽数据访问框架 
+    /// 写通用接口方法
     /// 2017/05/13 fhr
     /// </summary>
     /// <typeparam name="T"></typeparam>

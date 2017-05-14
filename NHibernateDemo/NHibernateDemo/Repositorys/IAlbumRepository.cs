@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace NHibernateDemo.Repositorys
 {
-    public interface IAlbumRepository:IRepository<Album>
+    /// <summary>
+    /// Album仓库接口，派生自通用仓库接口和Hibernate仓库接口
+    /// 2017/05/14 fhr
+    /// </summary>
+    public interface IAlbumRepository:IRepository<Album>,IBaseHibernateDAO<Album>
     {
         IEnumerable<Album> FindByTitle(string value);
 

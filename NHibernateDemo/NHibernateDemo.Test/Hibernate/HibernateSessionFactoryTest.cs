@@ -5,6 +5,10 @@ using NHibernate;
 
 namespace NHibernateDemo.Test.Hibernate
 {
+    /// <summary>
+    /// HibernateSessionFactory单元测试
+    /// 2017/05/14 fhr
+    /// </summary>
     [TestClass]
     public class HibernateSessionFactoryTest
     {

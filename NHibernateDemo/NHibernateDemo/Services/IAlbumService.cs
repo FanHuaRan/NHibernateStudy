@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace NHibernateDemo.Services
 {
+    /// <summary>
+    /// Album服务接口
+    /// 这儿会调用仓库层 但同时会进行防御型编程、事务处理等
+    /// 2017/05/14 fhr
+    /// </summary>
     public interface IAlbumService
     {
         Album FindOne(object id);

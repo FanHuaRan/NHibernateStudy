@@ -62,7 +62,6 @@
     <Compile Include="Hibernate\HibernateSessionFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respositorys\AlbumRepositoryTest.cs" />
-    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />

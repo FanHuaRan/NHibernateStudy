@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 
 namespace NHibernateDemo.Repositorys
 {
+    /// <summary>
+    /// 仓库基类泛型实现
+    /// 2017/05/14 fhr
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BaseRepository<T>:IBaseHibernateDAO<T>,IRepository<T> where T:class
     {
         private static  string entityName=null;
@@ -21,7 +26,7 @@ namespace NHibernateDemo.Repositorys
         {
             using (var session = GetSession())
             {
-                return session.Load<T>(id);
+                return session.Get<T>(id);
             }
         }
         public T LoadOne(object id)
@@ -82,7 +87,7 @@ namespace NHibernateDemo.Repositorys
         {
             using (var session = GetSession())
             {
-                var obj = FindOne(id);
+                var obj = session.Get<T>(id);
                 if (obj != null)
                 {
                     var transaction = session.BeginTransaction();

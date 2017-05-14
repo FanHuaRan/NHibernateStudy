@@ -1,21 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- This is the System.Data.dll provider for SQL Server -->
 <hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
+  <!--配置session-factory 与java一样--->
   <session-factory name="NHibernateTest">
+    <!--数据库驱动类 这儿与java不同，这儿需要有驱动，但是项目中同时还需要数据库操作的dll-->
     <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
+    <!--连接字符串-->
     <property name="connection.connection_string">server=.;database=musicstore;uid=sa;pwd=123;</property>
+    <!--指定用ADO.Net的批量更新的数量-->
     <property name="adonet.batch_size">10</property>
     <!--是否显示sql语句-->
     <property name="show_sql">true</property>
     <!--数据库的方言-->
     <property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
-    <!--<property name="use_outer_join">true</property>-->
+    <!--命令过期时间-->
     <property name="command_timeout">60</property>
     <!--数据库操作的方式-->
     <property name="hbm2ddl.auto">update</property>
     <property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
+    <!--指定代理工厂类 这儿主要用于延迟加载-->
     <property name="proxyfactory.factory_class">NHibernate.Bytecode.DefaultProxyFactoryFactory, NHibernate</property>
-    <!--找到对应的实体对象-->
+    <!--配置映射文件所在的程序集名称-->
     <mapping assembly="NHibernateDemo"/>
   </session-factory>
 </hibernate-configuration>

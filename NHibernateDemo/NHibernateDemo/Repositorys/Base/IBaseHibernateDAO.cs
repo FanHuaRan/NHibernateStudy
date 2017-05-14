@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace NHibernateDemo.Repositorys
 {
     /// <summary>
-    /// HibernateDAO接口
+    /// HibernateDAO接口 
+    /// 这儿的接口方法最好只与Hibernate相关
     /// 2017/05/13 fhr
     /// </summary>
     public interface IBaseHibernateDAO<T> where T:class

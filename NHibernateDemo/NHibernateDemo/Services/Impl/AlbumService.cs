@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace NHibernateDemo.Services.Impl
 {
+    /// <summary>
+    /// Album服务实现
+    /// 2017/05/14 fhr 暂时不写
+    /// </summary>
     public class AlbumService:IAlbumService
     {
         public Models.Album FindOne(object id)

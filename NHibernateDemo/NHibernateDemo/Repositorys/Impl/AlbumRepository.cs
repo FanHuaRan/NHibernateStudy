@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace NHibernateDemo.Repositorys.Impl
 {
+    /// <summary>
+    /// Album仓库实现 继承，实现Album仓库
+    /// 2017/05/14 fhr
+    /// </summary>
     public class AlbumRepository : BaseRepository<Album>, IAlbumRepository
     {
         public static readonly String TITLE = "title";
